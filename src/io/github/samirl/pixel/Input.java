@@ -1,5 +1,15 @@
 package io.github.samirl.pixel;
 
-public class Input {
+import javax.swing.JFrame;
 
+public class Input {
+	/**
+	 * This method should be run once at startup, to initialize the inputs.
+	 * 
+	 * @param frame
+	 */
+	public static void setupInputListener(JFrame frame) {
+		frame.addKeyListener(new KeyListener(
+				));
+	}
 }
