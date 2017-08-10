@@ -10,12 +10,48 @@ import io.github.samirl.pixel.Player;
 
 public class Shotgun extends Item {
 	Utilities util = new Utilities();
-	public int id = 0;
-	public int dropPercent = 25;
-	public String name = "Shotgun";
-	public boolean isWeapon = true;
-	public Attack primaryAttack = new Attack("Fire Shotgun", 5, false, true, true);
-	public Attack secondaryAttack = new Attack("Bayonet", 3, true, false, false);
+	private int id = 0;
+	private int dropPercent = 25;
+	private String name = "Shotgun";
+	private boolean isWeapon = true;
+	private Attack primaryAttack = new Attack("Fire Shotgun", 5, false, true, true);
+	private Attack secondaryAttack = new Attack("Bayonet", 3, true, false, false);
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getDropPercent() {
+		return dropPercent;
+	}
+	public void setDropPercent(int dropPercent) {
+		this.dropPercent = dropPercent;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public boolean isWeapon() {
+		return isWeapon;
+	}
+	public void setWeapon(boolean isWeapon) {
+		this.isWeapon = isWeapon;
+	}
+	public Attack getPrimaryAttack() {
+		return primaryAttack;
+	}
+	public void setPrimaryAttack(Attack primaryAttack) {
+		this.primaryAttack = primaryAttack;
+	}
+	public Attack getSecondaryAttack() {
+		return secondaryAttack;
+	}
+	public void setSecondaryAttack(Attack secondaryAttack) {
+		this.secondaryAttack = secondaryAttack;
+	}
 	public void onPrimaryAttack(Player target) {
 		Projectile bullet0 = new Projectile(util.vectorFromDegrees(target.getLocation()[0] + 5, target.getLocation()[1] + 30), 3);
 		Projectile bullet1 = new Projectile(util.vectorFromDegrees(target.getLocation()[0] + 5, target.getLocation()[1] + 0), 3);

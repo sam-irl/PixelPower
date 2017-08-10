@@ -1,5 +1,7 @@
 package io.github.samirl.pixel;
 
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 
 public class Input {
@@ -9,7 +11,6 @@ public class Input {
 	 * @param frame
 	 */
 	public static void setupInputListener(JFrame frame) {
-		frame.addKeyListener(new KeyListener(
-				));
+		frame.addKeyListener(null);
 	}
 }

@@ -2,7 +2,7 @@ package io.github.samirl.pixel.item;
 
 import javax.vecmath.Vector2d;
 
-public class Projectile {
+public final class Projectile {
 	public int damage;
 	public Vector2d velocity;
 	public Projectile(Vector2d velocity, int damage) {

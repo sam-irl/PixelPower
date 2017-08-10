@@ -3,14 +3,18 @@ package io.github.samirl.pixel.item;
 import io.github.samirl.pixel.Attack;
 import io.github.samirl.pixel.Player;
 
-public abstract class Item {
-	public int id;
-	public int dropPercent;
-	public String itemName;
-	public boolean isWeapon;
-	public Attack primaryAttack;
-	public Attack secondaryAttack;
-	public void onPrimaryAttack(Player attacker, Player target) {}
+public class Item {
+	private int id;
+	private int dropPercent;
+	private String itemName;
+	private boolean isWeapon;
+	private Attack primaryAttack;
+	private Attack secondaryAttack;
+	public void onPrimaryAttack(Player attacker, Player target) {
+		if(!isWeapon) {
+			return;
+		}
+	}
 	public void onPrimaryAttack(Player attacker) {
 		onPrimaryAttack(attacker, null);
 	}
