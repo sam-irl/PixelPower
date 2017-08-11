@@ -3,10 +3,15 @@ package io.github.samirl.pixel;
 import javax.swing.JFrame;
 
 import io.github.samirl.pixel.exception.InvalidLocationException;
+import io.github.samirl.pixel.item.HealthPack;
+import io.github.samirl.pixel.item.Item;
+import io.github.samirl.pixel.item.Shotgun;
 
 public class Arena {
 	private int[] xLimit;
 	private int[] yLimit;
+	private Player one;
+	private Player two;
 	Pixel pixel = new Pixel();
 	JFrame frame = pixel.getJFrame();
 	public Arena(Player one, Player two, int[] xLimit, int[] yLimit) {
@@ -18,6 +23,8 @@ public class Arena {
 		} catch (InvalidLocationException e) {
 			e.printStackTrace();
 		}
+		this.one = one;
+		this.two = two;
 	}
 	public int[] getxLimit() {
 		return xLimit;
@@ -54,5 +61,33 @@ public class Arena {
 	}
 	public void setTopYLimit(int y) {
 		this.yLimit[1] = y;
+	}
+	public Player getPlayerOne() {
+		return this.one;
+	}
+	public Player getPlayerTwo() {
+		return this.two;
+	}
+	public void spawnItem() {
+		double random = Math.random();
+		double locationRand = Math.random();
+		double location = (locationRand - 0.5) * 100;
+		Item newItem = null;
+		if(random < 0.2) {
+			newItem = new Shotgun();
+		}
+		if(random >= 0.2 && random < 0.4) {
+			newItem = new HealthPack();
+		}
+		if(random >= 0.4 && random < 0.6) {
+			newItem = new Item();
+		}
+		if(random >= 0.6 && random < 0.8) {
+			newItem = new Item();
+		}
+		if(random >= 0.8) {
+			newItem = new Item();
+		}
+		pixel.itemList[pixel.itemList.length + 1] = newItem;
 	}
 }

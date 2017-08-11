@@ -7,10 +7,10 @@ import io.github.samirl.pixel.item.Weapon;
 
 public class Event {
 	public void onRangedCollide(Projectile fired, Player hit) {
-		if(fired.velocity.lengthSquared() < 0.25) {
+		if(fired.getVelocity() < 0.25) {
 			return;
 		}
-		hit.setHealthPoints((int) (hit.getHealthPoints() - ((fired.damage) + Math.sqrt(fired.velocity.lengthSquared()))));
+		hit.setHealthPoints((int) (hit.getHealthPoints() - ((fired.getDamage()) + Math.sqrt(fired.getVelocity()))));
 	}
 	public void onMeleeCollide(Weapon weapon, Player player) {
 		

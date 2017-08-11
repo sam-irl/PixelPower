@@ -1,5 +1,6 @@
 package io.github.samirl.pixel.item;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class Shotgun extends Item {
 	private int dropPercent = 25;
 	private String name = "Shotgun";
 	private boolean isWeapon = true;
+	private final File sprite = new File("../../../../../assets/sprites/shotgun.png");
 	private Attack primaryAttack = new Attack("Fire Shotgun", 5, false, true, true);
 	private Attack secondaryAttack = new Attack("Bayonet", 3, true, false, false);
 	public int getId() {
@@ -53,9 +55,9 @@ public class Shotgun extends Item {
 		this.secondaryAttack = secondaryAttack;
 	}
 	public void onPrimaryAttack(Player target) {
-		Projectile bullet0 = new Projectile(util.vectorFromDegrees(target.getLocation()[0] + 5, target.getLocation()[1] + 30), 3);
-		Projectile bullet1 = new Projectile(util.vectorFromDegrees(target.getLocation()[0] + 5, target.getLocation()[1] + 0), 3);
-		Projectile bullet2 = new Projectile(util.vectorFromDegrees(target.getLocation()[0] + 5, target.getLocation()[1] + -30), 3);
+		Projectile bullet0 = new Projectile(util.makeArray((double) 5, 0), 3);
+		Projectile bullet1 = new Projectile(util.makeArray((double) 5, -30), 3);
+		Projectile bullet2 = new Projectile(util.makeArray((double) 5, 30), 3);
 		List<Projectile> bullets = new ArrayList<Projectile>();
 		bullets.add(bullet0);
 		bullets.add(bullet1);
