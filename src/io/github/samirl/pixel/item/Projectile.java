@@ -1,12 +1,41 @@
 package io.github.samirl.pixel.item;
 
-import javax.vecmath.Vector2d;
+import io.github.samirl.pixel.util.Utilities;
 
-public class Projectile {
-	public int damage;
-	public Vector2d velocity;
-	public Projectile(Vector2d velocity, int damage) {
+public final class Projectile {
+	Utilities util = new Utilities();
+	/**
+	 * The damage caused, before the velocity bonus
+	 */
+	private int damage;
+	/**
+	 * The initial velocity of the projectile
+	 */
+	private double velocity;
+	/**
+	 * Direction, in degrees of the unit circle around the player
+	 */
+	private double direction;
+	/**
+	 * double acceleration, double direction
+	 */
+	private double[] vector;
+	public Projectile(double[] vector, int damage) {
 		this.damage = damage;
-		this.velocity = velocity;
+		this.vector = vector;
+		this.velocity = vector[0];
+		this.direction = vector[1];
+	}
+	public int getDamage() {
+		return damage;
+	}
+	public double getVelocity() {
+		return velocity;
+	}
+	public double getDirection() {
+		return direction;
+	}
+	public double[] getVector() {
+		return vector;
 	}
 }
