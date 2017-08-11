@@ -15,45 +15,8 @@ public class Shotgun extends Item {
 	private int dropPercent = 25;
 	private String name = "Shotgun";
 	private boolean isWeapon = true;
-	private final File sprite = new File("../../../../../assets/sprites/shotgun.png");
 	private Attack primaryAttack = new Attack("Fire Shotgun", 5, false, true, true);
 	private Attack secondaryAttack = new Attack("Bayonet", 3, true, false, false);
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getDropPercent() {
-		return dropPercent;
-	}
-	public void setDropPercent(int dropPercent) {
-		this.dropPercent = dropPercent;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public boolean isWeapon() {
-		return isWeapon;
-	}
-	public void setWeapon(boolean isWeapon) {
-		this.isWeapon = isWeapon;
-	}
-	public Attack getPrimaryAttack() {
-		return primaryAttack;
-	}
-	public void setPrimaryAttack(Attack primaryAttack) {
-		this.primaryAttack = primaryAttack;
-	}
-	public Attack getSecondaryAttack() {
-		return secondaryAttack;
-	}
-	public void setSecondaryAttack(Attack secondaryAttack) {
-		this.secondaryAttack = secondaryAttack;
-	}
 	public void onPrimaryAttack(Player target) {
 		Projectile bullet0 = new Projectile(util.makeArray((double) 5, 0), 3);
 		Projectile bullet1 = new Projectile(util.makeArray((double) 5, -30), 3);

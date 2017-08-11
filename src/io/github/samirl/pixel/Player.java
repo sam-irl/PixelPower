@@ -1,12 +1,12 @@
 package io.github.samirl.pixel;
 
+import java.awt.Image;
 import java.io.File;
 
 import io.github.samirl.pixel.exception.InvalidLocationException;
 import io.github.samirl.pixel.item.Item;
 
 public class Player {
-	private File avatar = new File("../../../../../assets/avatars/missing-ava.png");
 	private int id = -1;
 	private String displayName = "error";
 	private boolean hasItem = false;
@@ -27,8 +27,7 @@ public class Player {
 	 * @param healthPoints
 	 * @param isDead
 	 */
-	public Player(File avatar, int id, String displayName, boolean hasItem, double[] location, int healthPoints) {
-		this.avatar = avatar;
+	public Player(int id, String displayName, boolean hasItem, double[] location, int healthPoints) {
 		this.id = id;
 		this.displayName = displayName;
 		this.hasItem = hasItem;
@@ -62,9 +61,6 @@ public class Player {
 		if(!hasItem) {
 			return;
 		}
-	}
-	public File getAvatar() {
-		return avatar;
 	}
 	/**
 	 * returns an [x, y] array of the player's location
@@ -119,9 +115,6 @@ public class Player {
 	}
 	public boolean checkHasItem() {
 		return hasItem;
-	}
-	public void setAvatar(File avatar) {
-		this.avatar = avatar;
 	}
 	public void setId(int id) {
 		this.id = id;

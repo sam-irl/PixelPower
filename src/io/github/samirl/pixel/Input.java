@@ -12,8 +12,6 @@ public class Input implements KeyListener {
 	private static Arena arena = pixel.getArena();
 	private static Player one = arena.getPlayerOne();
 	private static Player two = arena.getPlayerTwo();
-	private PixelPanel panel = pixel.getPanel();
-
 	/**
 	 * This method should be run once at startup, to initialize the inputs.
 	 * 
@@ -71,7 +69,7 @@ public class Input implements KeyListener {
 			two.useSecondary();
 			
 		default:
-			panel.redraw();
+			return;
 		}
 	}
 	@Override

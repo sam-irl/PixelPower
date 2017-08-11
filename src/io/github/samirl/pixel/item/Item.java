@@ -12,7 +12,6 @@ public class Item {
 	private boolean isWeapon;
 	private Attack primaryAttack;
 	private Attack secondaryAttack;
-	private File sprite;
 	private double[] location;
 	private boolean isHeld;
 	private Player holder;
@@ -27,9 +26,6 @@ public class Item {
 	public void onSecondaryAttack(Player attacker, Player target) {}
 	public void onSecondaryAttack(Player attacker) {
 		onSecondaryAttack(attacker, null);
-	}
-	public File getSprite() {
-		return sprite;
 	}
 	public boolean getIsHeld() {
 		if(holder == null) {
@@ -54,5 +50,41 @@ public class Item {
 	}
 	private void setIsHeld(boolean nowIsHeld) {
 		this.isHeld = nowIsHeld;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getDropPercent() {
+		return dropPercent;
+	}
+	public void setDropPercent(int dropPercent) {
+		this.dropPercent = dropPercent;
+	}
+	public String getName() {
+		return itemName;
+	}
+	public void setName(String name) {
+		this.itemName = name;
+	}
+	public boolean isWeapon() {
+		return isWeapon;
+	}
+	public void setWeapon(boolean isWeapon) {
+		this.isWeapon = isWeapon;
+	}
+	public Attack getPrimaryAttack() {
+		return primaryAttack;
+	}
+	public void setPrimaryAttack(Attack primaryAttack) {
+		this.primaryAttack = primaryAttack;
+	}
+	public Attack getSecondaryAttack() {
+		return secondaryAttack;
+	}
+	public void setSecondaryAttack(Attack secondaryAttack) {
+		this.secondaryAttack = secondaryAttack;
 	}
 }

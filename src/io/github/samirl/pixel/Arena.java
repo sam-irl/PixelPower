@@ -13,7 +13,6 @@ public class Arena {
 	private Player one;
 	private Player two;
 	Pixel pixel = new Pixel();
-	JFrame frame = pixel.getJFrame();
 	public Arena(Player one, Player two, int[] xLimit, int[] yLimit) {
 		double[] oneLocation = {-50, 0};
 		double[] twoLocation = {50, 0};

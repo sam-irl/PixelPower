@@ -2,8 +2,8 @@ package io.github.samirl.pixel.event;
 
 import io.github.samirl.pixel.Player;
 import io.github.samirl.pixel.exception.InvalidLocationException;
+import io.github.samirl.pixel.item.Item;
 import io.github.samirl.pixel.item.Projectile;
-import io.github.samirl.pixel.item.Weapon;
 
 public class Event {
 	public void onRangedCollide(Projectile fired, Player hit) {
@@ -12,7 +12,7 @@ public class Event {
 		}
 		hit.setHealthPoints((int) (hit.getHealthPoints() - ((fired.getDamage()) + Math.sqrt(fired.getVelocity()))));
 	}
-	public void onMeleeCollide(Weapon weapon, Player player) {
+	public void onMeleeCollide(Item weapon, Player player) {
 		
 	}
 	public void onPlayerCollide(Player one, Player two) {

@@ -8,7 +8,6 @@ public class Inventory {
 	private Item item;
 	private Player player;
 	private Pixel pixel;
-	private JFrame frame = pixel.getJFrame();
 	public Inventory(Player player) {
 		this.player = player;
 		if(!player.checkHasItem()) {
