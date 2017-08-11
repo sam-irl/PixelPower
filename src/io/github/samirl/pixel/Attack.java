@@ -1,5 +1,7 @@
 package io.github.samirl.pixel;
 
+import io.github.samirl.pixel.exception.IllegalAttackConstructorException;
+
 public class Attack {
 	private int damage = 0;
 	private boolean melee = true;
@@ -14,9 +16,9 @@ public class Attack {
 	 * @param ranged
 	 * @param primary
 	 */
-	public Attack(String name, int damage, boolean melee, boolean ranged, boolean primary) {
+	public Attack(String name, int damage, boolean melee, boolean ranged, boolean primary) throws IllegalAttackConstructorException {
 		if(melee && ranged) {
-			return;
+			throw new IllegalAttackConstructorException("An attack cannot be simultaneously melee and ranged!");
 		}
 	}
 }

@@ -8,6 +8,7 @@ import io.github.samirl.pixel.util.Utilities;
 
 import io.github.samirl.pixel.Attack;
 import io.github.samirl.pixel.Player;
+import io.github.samirl.pixel.exception.IllegalAttackConstructorException;
 
 public class Shotgun extends Item {
 	Utilities util = new Utilities();
@@ -15,8 +16,18 @@ public class Shotgun extends Item {
 	private int dropPercent = 25;
 	private String name = "Shotgun";
 	private boolean isWeapon = true;
-	private Attack primaryAttack = new Attack("Fire Shotgun", 5, false, true, true);
-	private Attack secondaryAttack = new Attack("Bayonet", 3, true, false, false);
+	private Attack primaryAttack;
+	private Attack secondaryAttack;
+	public Shotgun() {
+		try {
+			this.primaryAttack = new Attack("Fire Shotgun", 5, false, true, true);
+			this.secondaryAttack = new Attack("Bayonet", 3, true, false, false);
+		}
+		catch(IllegalAttackConstructorException e) {
+			this.primaryAttack = null;
+			this.secondaryAttack = null;
+		}
+	}
 	public void onPrimaryAttack(Player target) {
 		Projectile bullet0 = new Projectile(util.makeArray((double) 5, 0), 3);
 		Projectile bullet1 = new Projectile(util.makeArray((double) 5, -30), 3);
